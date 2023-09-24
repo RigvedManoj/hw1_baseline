@@ -23,6 +23,7 @@ public class ExpenseTrackerView extends JFrame {
   }
 
   public double getAmountField() {
+    InputValidation.isAmountValid(amountField.getText());
     if(amountField.getText().isEmpty()) {
       return 0;
     }else {
@@ -107,7 +108,7 @@ public class ExpenseTrackerView extends JFrame {
   
       // Fire table update
       transactionsTable.updateUI();
-  
+
     }  
 
   public void refresh() {
@@ -129,8 +130,5 @@ public class ExpenseTrackerView extends JFrame {
     getTableModel().addRow(new Object[]{t.getAmount(), t.getCategory(), t.getTimestamp()});
     refresh();
   }
-  
-
-
   // Other view methods
 }
