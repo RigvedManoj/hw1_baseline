@@ -21,4 +21,17 @@ public class InputValidation {
             throw new IllegalArgumentException("Please Enter a Number between 0 and 1000");
         }
     }
+
+    public static void isCategoryValid(String category){
+        //Check if category belongs to given list
+        switch (category.toLowerCase()) {
+            case "food", "travel", "bills", "entertainment", "other":
+                break;
+            default: {
+                JOptionPane.showMessageDialog(new JFrame(), "Please Enter a valid Category (food, travel, bills, entertainment, other)",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                throw new IllegalArgumentException("Please Enter a valid Category");
+            }
+        }
+    }
 }
